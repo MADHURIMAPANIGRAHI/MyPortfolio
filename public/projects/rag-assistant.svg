@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="ragBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0e1a"/>
+      <stop offset="100%" stop-color="#05070f"/>
+    </linearGradient>
+    <linearGradient id="ragCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14192d"/>
+      <stop offset="100%" stop-color="#0d1120"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#ragBg)"/>
+
+  <!-- Main Window -->
+  <rect x="50" y="35" width="700" height="330" rx="12" fill="url(#ragCard)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Top bar -->
+  <rect x="50" y="35" width="700" height="42" rx="12" fill="#0f1424" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="75" cy="56" r="5" fill="#ef4444"/>
+  <circle cx="92" cy="56" r="5" fill="#f59e0b"/>
+  <circle cx="109" cy="56" r="5" fill="#10b981"/>
+  <text x="140" y="61" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600" letter-spacing="0.5">AI CODEBASE VISUALIZATION // RAG PIPELINE &amp; GRAPH EXPLORER</text>
+  <rect x="590" y="46" width="140" height="20" rx="10" fill="#312e81" opacity="0.6"/>
+  <text x="602" y="60" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="11" font-weight="600">● VECTOR RETRIEVAL</text>
+
+  <!-- Left: NL Query & RAG Output Terminal -->
+  <rect x="70" y="95" width="310" height="250" rx="8" fill="#070a14" stroke="#1e293b" stroke-width="1"/>
+  
+  <!-- Search query box -->
+  <rect x="85" y="110" width="280" height="36" rx="6" fill="#111827" stroke="#6366f1" stroke-width="1"/>
+  <text x="98" y="133" fill="#818cf8" font-family="monospace" font-size="12">> explain auth token rotation flow</text>
+
+  <!-- RAG Synthesis Card -->
+  <rect x="85" y="158" width="280" height="170" rx="6" fill="#0c1222" stroke="#1e293b" stroke-width="1"/>
+  <text x="98" y="180" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Contextual Vector Chunks (K=4)</text>
+  
+  <rect x="98" y="192" width="254" height="24" rx="4" fill="#1e1b4b"/>
+  <text x="108" y="208" fill="#c7d2fe" font-family="monospace" font-size="10">src/auth/jwt_guard.py:L45-80 (sim: 0.94)</text>
+
+  <rect x="98" y="222" width="254" height="24" rx="4" fill="#1e1b4b"/>
+  <text x="108" y="238" fill="#c7d2fe" font-family="monospace" font-size="10">src/api/routes/auth.py:L112 (sim: 0.89)</text>
+
+  <!-- AI Explanation snippet -->
+  <text x="98" y="268" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11" font-weight="600">AI Synthesized Architecture:</text>
+  <text x="98" y="286" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">JWT refresh tokens are validated against Redis</text>
+  <text x="98" y="302" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">with rotation locks to eliminate replay vectors.</text>
+
+  <!-- Right: Code AST & Dependency Graph -->
+  <rect x="400" y="95" width="330" height="250" rx="8" fill="#070a14" stroke="#1e293b" stroke-width="1"/>
+  <text x="415" y="122" fill="#64748b" font-family="system-ui, sans-serif" font-size="11" font-weight="700">AST DEPENDENCY GRAPH</text>
+
+  <!-- Graph Edges -->
+  <line x1="565" y1="150" x2="470" y2="210" stroke="#4338ca" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="565" y1="150" x2="660" y2="210" stroke="#4338ca" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="470" y1="210" x2="520" y2="285" stroke="#0891b2" stroke-width="2"/>
+  <line x1="660" y1="210" x2="610" y2="285" stroke="#0891b2" stroke-width="2"/>
+  <line x1="520" y1="285" x2="610" y2="285" stroke="#38bdf8" stroke-width="1.5"/>
+
+  <!-- Root Node -->
+  <circle cx="565" cy="150" r="22" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
+  <text x="565" y="154" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">Server</text>
+
+  <!-- Branch Nodes -->
+  <circle cx="470" cy="210" r="20" fill="#082f49" stroke="#38bdf8" stroke-width="2"/>
+  <text x="470" y="214" fill="#bae6fd" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Router</text>
+
+  <circle cx="660" cy="210" r="20" fill="#082f49" stroke="#38bdf8" stroke-width="2"/>
+  <text x="660" y="214" fill="#bae6fd" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Models</text>
+
+  <circle cx="520" cy="285" r="18" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="520" y="289" fill="#a5f3fc" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Auth</text>
+
+  <circle cx="610" cy="285" r="18" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="610" y="289" fill="#a5f3fc" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">RAG</text>
+
+  <rect x="420" y="318" width="290" height="20" rx="4" fill="#1e293b" opacity="0.6"/>
+  <text x="430" y="332" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Real-time DAG rendering • Dynamic AST traversal</text>
+</svg>

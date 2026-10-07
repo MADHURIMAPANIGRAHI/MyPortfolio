@@ -1,17 +1,68 @@
 @import "tailwindcss";
 
-:root { --background: #24100c; --foreground: #fff8ed; }
-html { scroll-behavior: smooth; }
-body { background: var(--background); color: var(--foreground); font-family: var(--font-geist), Arial, sans-serif; }
-* { border-color: rgba(255, 226, 185, .14); }
-::selection { background: #d97706; color: #fff; }
-.section-anchor { scroll-margin-top: 5.5rem; }
+:root {
+  --background: #090d16;
+  --foreground: #f8fafc;
+  --surface: #0f172a;
+  --surface-card: #111827;
+  --surface-card-hover: #172033;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-prominent: rgba(255, 255, 255, 0.16);
+  --accent-primary: #6366f1;
+  --accent-cyan: #06b6d4;
+  --accent-emerald: #10b981;
+}
 
-/* Warm, high-contrast palette shared by the compact portfolio components. */
-main [class*="bg-[#111111]"] { background-color: #38170f !important; }
-main [class*="bg-[#0d1525]"] { background-color: #4a1d12 !important; }
-main [class*="bg-blue-600"] { background-color: #d97706 !important; }
-main [class*="hover:bg-blue-500"]:hover { background-color: #f59e0b !important; }
-main [class*="text-blue-400"], main [class*="text-blue-500"] { color: #fbbf24 !important; }
-main [class*="focus-visible:outline-blue-500"] { outline-color: #fbbf24 !important; }
-main [class*="hover:border-blue-500"]:hover { border-color: rgb(251 191 36 / .7) !important; }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: #ffffff;
+}
+
+.section-anchor {
+  scroll-margin-top: 5rem;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-header {
+  background: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Accessible focus outline */
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 3px;
+}
+
+/* Respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

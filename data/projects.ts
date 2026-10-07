@@ -1,8 +1,66 @@
-export type Project = { title: string; description: string; stack: string[]; github: string; live: string; image: string; featured?: boolean };
+export type Project = {
+  title: string;
+  tagline?: string;
+  description: string;
+  highlights?: string[];
+  stack: string[];
+  github: string;
+  live: string;
+  image: string;
+  featured?: boolean;
+  metrics?: string;
+};
 
 export const projects: Project[] = [
-  { title: "Cohortly", description: "A collaborative learning hub with role-aware workspaces, real-time progress updates, and focused study plans.", stack: ["Next.js", "TypeScript", "MongoDB", "Auth.js"], github: "https://github.com/your-github/cohortly", live: "https://cohortly.example.com", image: "/projects/cohortly.svg", featured: true },
-  { title: "ShipSmart API", description: "REST API for a local delivery network that reduced manual dispatch updates with tracked delivery states.", stack: ["Node.js", "Express", "MongoDB", "JWT"], github: "https://github.com/your-github/shipsmart-api", live: "https://shipsmart-api.example.com", image: "/projects/shipsmart.svg", featured: true },
-  { title: "LedgerLine", description: "Java expense manager with clean data modelling, CSV exports, and monthly category insights.", stack: ["Java", "Spring Boot", "PostgreSQL", "REST API"], github: "https://github.com/your-github/ledgerline", live: "https://ledgerline.example.com", image: "/projects/ledgerline.svg" },
-  { title: "CampusCart", description: "Marketplace for student-to-student listings with image uploads, search, and protected seller actions.", stack: ["React", "Node.js", "Cloudinary", "MongoDB"], github: "https://github.com/your-github/campuscart", live: "https://campuscart.example.com", image: "/projects/campuscart.svg" },
+  {
+    title: "SlotSmart",
+    tagline: "Intelligent Academic & Exam Scheduling Engine",
+    description:
+      "Architected an intelligent scheduling platform using conflict-free optimization algorithms, enabling automated timetable and examination management for schools and institutions.",
+    highlights: [
+      "Reduced manual scheduling effort by ~70% across 5+ institutions via rule-based automation.",
+      "Implemented conflict-free scheduling engine for classes, faculty, lecture halls, and examinations.",
+      "Built multi-organization support with role-based dashboards and academic asset management.",
+    ],
+    stack: ["React.js", "Node.js", "MongoDB", "NextAuth.js", "JWT", "Redis"],
+    github: "https://github.com/MADHURIMAPANIGRAHI",
+    live: "https://github.com/MADHURIMAPANIGRAHI",
+    image: "/projects/slotsmart.svg",
+    featured: true,
+    metrics: "~70% Manual Effort Reduction • 5+ Inst.",
+  },
+  {
+    title: "LocalLoop",
+    tagline: "QR-Based SaaS Referral & Growth Engine",
+    description:
+      "A multi-tenant SaaS referral platform built for local businesses (cafes, gyms, salons) to track customer referrals via QR codes, reward brand ambassadors, and measure ROI with real-time analytics.",
+    highlights: [
+      "Engineered multi-tenant data isolation using Supabase and Prisma to support 100+ businesses, 10K+ monthly referrals, and 5K+ ambassadors.",
+      "Implemented robust backend rate limiting (100 req/min per IP) to prevent fraudulent scans and abuse.",
+      "Built real-time merchant analytics, role-based dashboards, and JWT session handling.",
+    ],
+    stack: ["Next.js", "Tailwind CSS", "TypeScript", "Prisma", "Supabase", "Cloudinary", "JWT", "Redis"],
+    github: "https://github.com/MADHURIMAPANIGRAHI",
+    live: "https://github.com/MADHURIMAPANIGRAHI",
+    image: "/projects/localloop.svg",
+    featured: true,
+    metrics: "100+ Businesses • 10K+ Monthly Referrals",
+  },
+  {
+    title: "AI Codebase Visualization & RAG Assistant",
+    tagline: "Semantic Code Intelligence & Graph Explorer",
+    description:
+      "A GenAI-powered developer productivity system providing semantic codebase search, repository structure analysis, and AI-synthesized code explanations via Retrieval-Augmented Generation.",
+    highlights: [
+      "Engineered RAG pipelines for semantic search across multi-file repositories with contextual vector retrieval.",
+      "Implemented AST dependency graph visualization and natural language querying for rapid developer onboarding.",
+      "Accelerated codebase comprehension and debugging cycles through automated architecture explanations.",
+    ],
+    stack: ["Python", "FastAPI", "Generative AI", "RAG", "Vector Search", "React.js", "TypeScript"],
+    github: "https://github.com/MADHURIMAPANIGRAHI",
+    live: "https://github.com/MADHURIMAPANIGRAHI",
+    image: "/projects/rag-assistant.svg",
+    featured: true,
+    metrics: "Contextual RAG • AST Dependency Graphs",
+  },
 ];
